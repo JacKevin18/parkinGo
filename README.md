@@ -1,2 +1,2 @@
 # parkinGo
-sistema que reserva estacionamiento de forma virtual
+sistema que reserva estacionamiento de forma virtual, nuestro codigo tiene simulaciones de base de datos con listas enlasadas de simple enlace, y tambien tenemos todos los casos de uso o funciones de la app para el cliente como: registrarse, ver estacionamientos disponiblies, reservar, canselar, pagar. etc. de igual forma para el admisnitrador desde añadir mas estacionamientos eliminar estacionamientos, añadir parqueos, etc.  
