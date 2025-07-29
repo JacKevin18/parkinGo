@@ -17,8 +17,8 @@ public class Main {
         VerificadorDeCodigo verificador = new VerificadorDeCodigo(lista);
 
         // Pruebas
-        verificador.validarCodigo("CAR12561");  // ✅ válido
-        verificador.validarCodigo("XYZ6798");  // ⛔ inactivo
-        verificador.validarCodigo("000000");  // ❌ no existe
+        verificador.validarCodigo("CAR12561");  //  válido
+        verificador.validarCodigo("XYZ6798");  //  inactivo
+        verificador.validarCodigo("000000");  //  no existe
     }
 }
