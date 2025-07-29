@@ -45,4 +45,25 @@ public class Cliente {
 
         return true;
     }
+
+    public String consultarEspacios(Parqueo parqueo){
+        String res = parqueo.consultar();
+        System.out.print(res);
+        return res;
+    }
+
+    public boolean cancelarReserva(String codigo, Parqueo parqueo){
+        return parqueo.cancelar(codigo);
+    }
+
+    public void verCodigos() {
+        if (codigos.isEmpty()) {
+            System.out.println("Este cliente no tiene códigos registrados.");
+            return;
+        }
+        System.out.println("Códigos registrados por el cliente:");
+        for (String codigo : codigos) {
+            System.out.println("- " + codigo);
+        }
+    }
 }

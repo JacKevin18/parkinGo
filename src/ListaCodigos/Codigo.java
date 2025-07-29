@@ -2,6 +2,7 @@ package ListaCodigos;
 
 public class Codigo {
     private String codigo;
+    private int idEstacionamiento;
     private Codigo sig;
 
     public Codigo (String codigo){
@@ -14,6 +15,10 @@ public class Codigo {
 
     public String getCodigo() {
         return codigo;
+    }
+
+    public int getIdEstacionamiento() {
+        return idEstacionamiento;
     }
 
     public void setSig(Codigo sig) {

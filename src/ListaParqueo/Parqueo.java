@@ -79,6 +79,30 @@ public class Parqueo {
         return true;
     }
 
+    public String consultar(){
+        StringBuilder resultado = new StringBuilder();
+        Estacionamiento actual = inicio;
+        boolean hayDisponibles = false;
+
+        while (actual != null) {
+            if (actual.getDisponible()) {
+                resultado.append("Estacionamiento ID: ").append(actual.getId()).append(" está disponible.\n");
+                hayDisponibles = true;
+            }
+            actual = actual.getSig();
+        }
+
+        if (!hayDisponibles) {
+            return "No hay espacios disponibles.";
+        }
+
+        return resultado.toString();
+    }
+
+    public boolean cancelar(String codigo){
+        return codigosRegistrados.cancelarCodigo(codigo);
+    }
+
     public CodigosRegistrados getCodigosRegistrados() {
         return codigosRegistrados;
     }

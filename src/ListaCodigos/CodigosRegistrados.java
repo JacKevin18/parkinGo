@@ -51,4 +51,46 @@ public class CodigosRegistrados {
         }
         return cod;
     }
+
+    private int obtenerIdEstacionamiento(String codigo) {
+        Codigo actual = inicio;
+
+        while (actual != null) {
+            if (actual.getCodigo().equals(codigo)) {
+                return actual.getIdEstacionamiento();
+            }
+            actual = actual.getSig();
+        }
+        return -1;
+    }
+
+    public boolean cancelarCodigo(String codigo){
+        int res = obtenerIdEstacionamiento(codigo);
+        if(-1 == res){
+            System.out.print("No existe una reserva con ese codigo");
+            return false;
+        }
+        eliminar(codigo);
+        System.out.print("Cancelacion exitosa");
+        return true;
+    }
+
+    private boolean eliminar(String codigo){
+        Codigo actual = inicio;
+        Codigo anterior = null;
+
+        while (actual != null) {
+            if (actual.getCodigo().equals(codigo)) {
+                if (anterior == null) {
+                    inicio = actual.getSig();
+                } else {
+                    anterior.setSig(actual.getSig());
+                }
+                return true;
+            }
+            anterior = actual;
+            actual = actual.getSig();
+        }
+        return false;
+    }
 }
