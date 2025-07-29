@@ -1,3 +1,5 @@
+package modelos;
+
 public class Reserva {
     private String idReserva;
     private String nombreUsuario;

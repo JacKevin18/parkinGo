@@ -1,3 +1,5 @@
+package modelos;
+
 public class Parqueo {
     private int id;
     private String tipo;
