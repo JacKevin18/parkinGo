@@ -5,8 +5,9 @@ public class Codigo {
     private int idEstacionamiento;
     private Codigo sig;
 
-    public Codigo (String codigo){
+    public Codigo (String codigo, int idEstacionamiento){
         this.codigo = codigo;
+        this.idEstacionamiento = idEstacionamiento;
     }
 
     public Codigo getSig() {

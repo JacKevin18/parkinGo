@@ -100,7 +100,20 @@ public class Parqueo {
     }
 
     public boolean cancelar(String codigo){
-        return codigosRegistrados.cancelarCodigo(codigo);
+        int res = codigosRegistrados.cancelarCodigo(codigo);
+        if(res == -1){
+            return false;
+        }
+        buscar(res).setDisponible(true);
+        return true;
+    }
+
+    public boolean verificar(String codigo){
+        int res = codigosRegistrados.verificarCodigos(codigo);
+        if(res == -1){
+            return false;
+        }
+        return true;
     }
 
     public CodigosRegistrados getCodigosRegistrados() {

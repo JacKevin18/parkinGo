@@ -33,13 +33,13 @@ public class CodigosRegistrados {
         return false;
     }
 
-    public String generarCodigo() {
+    public String generarCodigo(int idEstacionamiento) {
         String cod;
         do {
             cod = generarCodigoAzar(6);
         } while (existeCodigo(cod));
 
-        Codigo nuevo = new Codigo(cod);
+        Codigo nuevo = new Codigo(cod, idEstacionamiento);
         if (inicio == null) {
             inicio = nuevo;
         } else {
@@ -51,6 +51,7 @@ public class CodigosRegistrados {
         }
         return cod;
     }
+
 
     private int obtenerIdEstacionamiento(String codigo) {
         Codigo actual = inicio;
@@ -64,15 +65,26 @@ public class CodigosRegistrados {
         return -1;
     }
 
-    public boolean cancelarCodigo(String codigo){
+    public int cancelarCodigo(String codigo){
         int res = obtenerIdEstacionamiento(codigo);
         if(-1 == res){
             System.out.print("No existe una reserva con ese codigo");
-            return false;
+            return res;
         }
         eliminar(codigo);
         System.out.print("Cancelacion exitosa");
-        return true;
+        return res;
+    }
+
+    public int verificarCodigos(String codigo){
+        int res = obtenerIdEstacionamiento(codigo);
+        if(-1 == res){
+            System.out.print("No existe una reserva con ese codigo");
+            return res;
+        }
+        eliminar(codigo);
+        System.out.print("verificacion exitosa");
+        return res;
     }
 
     private boolean eliminar(String codigo){

@@ -37,7 +37,7 @@ public class Cliente {
             return false;
         }
 
-        String codigo = parqueo.getCodigosRegistrados().generarCodigo();
+        String codigo = parqueo.getCodigosRegistrados().generarCodigo(idEstacio);
         codigos.add(codigo);
 
         System.out.println("Recibo: El pago fue completado con éxito. Estacionamiento reservado: " + idEstacio);
@@ -65,5 +65,9 @@ public class Cliente {
         for (String codigo : codigos) {
             System.out.println("- " + codigo);
         }
+    }
+
+    public boolean verificarCodigo(String codigo, Parqueo parqueo){
+        return parqueo.verificar(codigo);
     }
 }
