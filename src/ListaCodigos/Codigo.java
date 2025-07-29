@@ -15,4 +15,8 @@ public class Codigo {
     public String getCodigo() {
         return codigo;
     }
+
+    public void setSig(Codigo sig) {
+        this.sig = sig;
+    }
 }
