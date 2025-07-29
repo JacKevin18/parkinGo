@@ -8,6 +8,7 @@ public class Main {
         Parqueo par = new Parqueo();
         boolean yes = par.eliminarEstacionamiento();
         System.out.println("yes: "+ yes);
-
+        CodigosRegistrados codigos = new CodigosRegistrados();
+        VerificadorCodigo verificador = new VerificadorCodigo(codigos, parqueo);
     }
 }
